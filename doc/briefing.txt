@@ -1,0 +1,53 @@
+Nome do Projeto: WebdevPro / Blog
+
+	Requisitos
+	
+	- Models
+		- Category
+			- name
+
+		- Post
+			- id:integer auto_increment
+			- title:string
+			- resume:string
+			- content:text
+			- published_at:datetime
+			- status:boolean
+
+		- Comment
+			- post_id:integer 
+			- name
+			- email
+			- content
+			- ip
+			- status
+
+================================================
+
+		- User
+			- name
+			- username
+			- email
+			- password
+				
+
+
+	Passo a Passo
+
+		- rails new webdevpro -d mysql
+		- cd webdevpro
+		- rails s
+		- rake db:create
+		- rails g model Category name
+		- rake db:migrate
+		- rails g model Post title resume content:text published_at:datetime status:boolean
+		- rake db:migrate
+		- rails g model Comment name email content:text ip status:boolean
+		- rake db:migrate
+		- rails g migration add_column_ip_nelso_to_comments ip_nelso
+		- rails g migration remove_column_ip_nelso_to_comments ip_nelso
+		- rake db:drop
+		- rake db:create
+		- rake db:migrate
+		ou
+		- rake db:reset

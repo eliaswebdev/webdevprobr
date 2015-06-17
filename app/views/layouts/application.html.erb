@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webdevpro</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<%= notice -%>
+
+	<nav>
+		<ul>
+			<li><%= link_to 'Página Principal', root_path %></li>
+			<li><%= link_to 'Categorias', categories_path %></li>
+			<li><%= link_to 'Posts', posts_path %></li>
+			<li class="time-now"><%= l(time_now, format: :short) -%></li>
+		</ul>
+	</nav>
+
+<%= yield %>
+
+<%= javascript_include_tag 'application' %>
+</body>
+</html>

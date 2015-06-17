@@ -1,0 +1,53 @@
+// nav ul {
+// 	display:block
+// }
+// nav ul li {
+// 	list-style: none
+// 	display: inline
+// }
+// nav ul li a {
+// 	display: block
+// 	padding: 0 5px
+// 	float: left
+// }
+
+nav {
+	ul {
+		display: block;
+		clear: both;
+		overflow: hidden;
+		margin-bottom: 20px;
+		li {
+			list-style: none;
+			display: inline;
+			a {
+				display: block;
+				padding: 0 5px;
+				float: left;
+				&:hover{
+					color: red;
+				}
+				&:visited {
+					color: blue;
+				}
+			}
+		}
+	}
+}
+
+label {
+	&.label-success {
+		color: green;
+	}
+
+	&.label-danger {
+		color: red;
+	}
+}
+
+
+
+
+
+
+
