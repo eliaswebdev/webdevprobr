@@ -1,11 +1,13 @@
 <h1>Categories</h1>
 
+<%= link_to "Cadastrar", new_category_path, class: 'btn btn-primary pull-right' %>
 
 <table border="1" width="100%">
 	<thead>
 		<tr>
 			<th>ID</th>
 			<th>NAME</th>
+			<th>Options</th>
 		</tr>
 	</thead>
 
@@ -14,6 +16,11 @@
 		<tr>
 			<td><%= category.id -%></td>
 			<td><%= category.name -%></td>
+			<td>
+				<%= link_to 'Exibir', category_path(category.id) %>
+				<%= link_to 'Excluir', category_path(category.id), method: :delete, data: {confirm: 'Deseja mesmo excluir este category?'} %>
+				<%= link_to "Editar", edit_category_path(category.id) %>
+			</td>
 		</tr>
 		<% end %>
 	</tbody>
@@ -21,7 +28,7 @@
 	<tfoot>
 		<tr>
 			<th>Total</th>
-			<th><%= @categories.size %></th>
+			<th colspan="2"><%= @categories.size %></th>
 		</tr>
 	</tfoot>
 </table>

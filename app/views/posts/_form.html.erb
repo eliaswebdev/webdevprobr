@@ -1,0 +1,8 @@
+<%= simple_form_for @post do |f| %>
+	<%= f.input :title %>
+	<%= f.input :resume %>
+	<%= f.input :content, input_html: {rows: 20} %>
+	<%= f.input :published_at, label: true, input_html: {start_year: (Date.current.year-20), end_year: (Date.current.year+20)} %>
+	<%= f.input :status, as: :radio_buttons, collection: [['Publicado', true], ['Não Publicado', false]] %>
+	<%= f.submit %>
+<% end %>

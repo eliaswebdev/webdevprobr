@@ -1,5 +1,7 @@
 <h1>Posts</h1>
 
+<%= link_to "Cadastrar", new_post_path, class: 'btn btn-primary pull-right' %>
+
 <table border="1" width="100%">
 	<thead>
 		<tr>
@@ -21,8 +23,9 @@
 			<td><%=l post.updated_at, format: :basic -%></td>
 			<td><%=s post.status -%></td>
 			<td>
-				<%= link_to 'Show', post_path(post.id) %>
-				<%= link_to 'Delete', post_path(post.id), method: :delete, data: {confirm: 'Deseja mesmo excluir este post?'} %>
+				<%= link_to 'Exibir', post_path(post.id) %>
+				<%= link_to 'Excluir', post_path(post.id), method: :delete, data: {confirm: 'Deseja mesmo excluir este post?'} %>
+				<%= link_to "Editar", edit_post_path(post.id) %>
 			</td>
 		</tr>
 		<% end %>

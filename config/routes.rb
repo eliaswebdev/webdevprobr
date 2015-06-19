@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories
   resources :posts
 
   # get 'posts/index', as: :posts
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   # get 'posts/new'
   # get 'posts/edit'
 
-  get '/categories' => 'categories#index', as: :categories, path: 'categorias-listagem'
+  # get '/categories' => 'categories#index', as: :categories, path: 'categorias-listagem'
 
   root 'pages#index'
 
