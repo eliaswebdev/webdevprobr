@@ -4,15 +4,23 @@ class PostsController < ApplicationController
   	@posts = Post.all
   end
 
-  # POST
-  def create
-    @post = Post.create(post_params)
-    redirect_to(posts_path, :notice => 'Post criado com sucesso!')
-  end
-
   # GET
   def new
     @post = Post.new
+  end
+
+  # POST
+  def create
+    @post = Post.create(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET
@@ -33,8 +41,15 @@ class PostsController < ApplicationController
   # PATCH
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to(posts_path, :notice => 'Post atualizado com sucesso!')
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to posts_path, notice: 'Post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE

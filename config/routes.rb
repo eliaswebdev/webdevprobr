@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :contacts
   resources :categories
   resources :posts
+  resources :pages
 
   # get 'posts/index', as: :posts
   # get 'posts/show'
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
   # get '/categories' => 'categories#index', as: :categories, path: 'categorias-listagem'
 
-  root 'pages#index'
+  root 'pages#welcome'
 
 
 

@@ -4,22 +4,32 @@
   <title>Webdevpro</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+
 </head>
 <body>
+<div class="container-fluid">
 
-	<%= notice -%>
+	<%= render 'layouts/menu' %>
 
-	<nav>
-		<ul>
-			<li><%= link_to 'Página Principal', root_path %></li>
-			<li><%= link_to 'Categorias', categories_path %></li>
-			<li><%= link_to 'Posts', posts_path %></li>
-			<li class="time-now"><%= l(time_now, format: :short) -%></li>
-		</ul>
-	</nav>
+	<div class="row">
+		<div class="col-md-12">
 
-<%= yield %>
+			<p id="notice"><%= notice %></p>
 
+			<%= yield %>
+		</div>
+	</div>
+</div>
 <%= javascript_include_tag 'application' %>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </body>
 </html>

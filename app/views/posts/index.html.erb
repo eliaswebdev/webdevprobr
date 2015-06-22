@@ -2,7 +2,7 @@
 
 <%= link_to "Cadastrar", new_post_path, class: 'btn btn-primary pull-right' %>
 
-<table border="1" width="100%">
+<table class='table table-hover table-bordered'>
 	<thead>
 		<tr>
 			<th>ID</th>
@@ -23,9 +23,9 @@
 			<td><%=l post.updated_at, format: :basic -%></td>
 			<td><%=s post.status -%></td>
 			<td>
-				<%= link_to 'Exibir', post_path(post.id) %>
-				<%= link_to 'Excluir', post_path(post.id), method: :delete, data: {confirm: 'Deseja mesmo excluir este post?'} %>
-				<%= link_to "Editar", edit_post_path(post.id) %>
+				<%= link_to 'Exibir', post_path(post.id), class: 'btn btn-default btn-xs' %>
+				<%= link_to 'Excluir', post_path(post.id), method: :delete, data: {confirm: 'Deseja mesmo excluir este post?'}, class: 'btn btn-danger btn-xs' %>
+				<%= link_to "Editar", edit_post_path(post.id), class: 'btn btn-info btn-xs' %>
 			</td>
 		</tr>
 		<% end %>

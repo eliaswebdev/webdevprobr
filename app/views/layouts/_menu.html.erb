@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          <li><%= link_to 'Página Principal', root_path %></li>
+          <li><%= link_to 'Páginas', pages_path %></li>
+          <li><%= link_to 'Categorias', categories_path %></li>
+          <li><%= link_to 'Contatos', contacts_path %></li>
+          <li><%= link_to 'Posts', posts_path %></li>
+          <li class="time-now"><a href="javascript:;"><%= l(time_now, format: :short) -%></a></li>
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
