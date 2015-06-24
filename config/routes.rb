@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :posts
   resources :pages
 
+  namespace :admin do
+    resources :categories
+  end
+
   # get 'posts/index', as: :posts
   # get 'posts/show'
   # get 'posts/new'

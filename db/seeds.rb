@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'ffaker'
+
+200.times do
+	name = FFaker::Education.school_name
+	Category.create(name: name )
+	puts name
+end

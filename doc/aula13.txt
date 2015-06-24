@@ -1,0 +1,6 @@
+- gem 'twitter-bootstrap'
+- gem 'ffaker' => seed
+- gem 'kaminari' => paginação
+- namespace
+- gem 'devise' => autenticação
+- gem 'declarative_authorization' => controle de acesso
