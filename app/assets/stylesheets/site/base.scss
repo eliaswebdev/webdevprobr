@@ -1,0 +1,80 @@
+/*!
+ *Curso de Ruby On Rails
+ *
+ */
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+body{ font-family: 'Open Sans', sans-serif ; padding-top: 70px;}
+
+
+footer {
+    margin: 50px 0;
+}
+a {
+  color: #E23838;
+  text-decoration: none;
+}
+a:hover {
+  color: #C81C2C;
+  text-decoration: none;
+}
+.navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+}
+.navbar-inverse {
+  background-color: #C81C1C;
+  border-color: #952626;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #FFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #FFF;
+  background-color:#E23838;
+}
+.bar-v1-cam {margin-bottom: 0}
+.bar-v1 ul.nav>li>a {color:#999999;}
+.header-cam{ width: 100%; background:#4E4E4E ; padding: 25px 0; margin:-19px 0 10px}
+.navbar-brand{padding: 13px 15px 8px 30px;}
+.bs-docs-nav .navbar-toggle .icon-bar {background-color: #3BC9A6;}
+.logo-cam{padding-left: 0; text-align: center;}
+.cam-name { color:#fff; padding-left: 5px;padding-right: 5px;}
+.cam-name h2{font-size: 26px; margin-bottom: 2px}
+.cam-name p{font-size: 15px;margin-left: 3px;color: #ccc;}
+.search-cam{width: 300px;float: right; margin-top: 25px;}
+span.cam-icon-search{color:#4E4E4E; font-size: 20px}
+span.input-group.bnt-cam-search {position: relative;  left: -5px;}
+.search-cam button.btn.btn-default { -webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;-o-border-radius: 0;border-radius: 0;  padding: 7px 12px 6px;}
+.input-group.search-cam input.form-control {border-right: none; height:40px; width: 250px;}
+@media (max-width: 767px) {
+    .search-cam{margin: 0 0 10px; float: none}
+    .input-group.search-cam input.form-control { border-right: none; height: 40px; width: 218px; }
+    form.form-inline.form-search-cam {margin: 0 0 10px;}
+    h2.title-sidebar{margin-top: 15px; padding-left: 15px;padding-bottom: 4px;padding-top:12px}
+}
+i.icon {
+    font-size: 30px;
+    padding: 0;
+}
+ul.nav.navbar-nav.navbar-right li a {
+    padding-bottom: 9px;
+    padding-top: 10px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #C81C1C;
+  border-color: #B21A1A;
+}
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #C81C2C;
+  border-color: #B21A1A;
+}
+.well {
+  background-color: #F6F6F6;
+  border: 1px solid #ECECEC;
+  border-radius: 0;
+}
+.sidebar{
+	padding-top: 15px;
+}

@@ -8,8 +8,21 @@
 
 require 'ffaker'
 
-200.times do
+puts 'Categories'
+10.times do
 	name = FFaker::Education.school_name
 	Category.create(name: name )
 	puts name
+end
+
+puts 'Posts'
+100.times do
+	Post.create(
+		category_id: Category.all.order('RANDOM()').first.id,
+		title: FFaker::Lorem.sentence,
+		resume: FFaker::Lorem.phrase,
+		content: FFaker::Lorem.paragraphs,
+		published_at: FFaker::Time.date,
+		status: true
+	)
 end

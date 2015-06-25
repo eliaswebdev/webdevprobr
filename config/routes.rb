@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   resources :contacts
-  resources :categories
   resources :posts
   resources :pages
 
   namespace :admin do
+    root 'pages#welcome'
     resources :categories
+    resources :contacts
+    resources :posts
+    resources :pages    
   end
-
-  # get 'posts/index', as: :posts
-  # get 'posts/show'
-  # get 'posts/new'
-  # get 'posts/edit'
-
-  # get '/categories' => 'categories#index', as: :categories, path: 'categorias-listagem'
 
   root 'pages#welcome'
 

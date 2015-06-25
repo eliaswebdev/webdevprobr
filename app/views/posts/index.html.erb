@@ -1,33 +1,37 @@
-<h1>Posts</h1>
+		<div class="page-header">
+			<h1>Posts</h1>
+		</div>
 
-<%= link_to "Cadastrar", new_post_path, class: 'btn btn-primary pull-right' %>
+          <!-- Blog Entries Column -->
+            <% @posts.each do |post| %>
+                <%= content_tag :h2, link_to(post.title, post) -%>
 
-<table class='table table-hover table-bordered'>
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>Title</th>
-			<th>Created_At</th>
-			<th>Updated_At</th>
-			<th>Status</th>
-			<th>Actions</th>
-		</tr>
-	</thead>
+                <p class="lead"> Por <a href="index.php">RoR</a> </p>
 
-	<tbody>
-		<% @posts.each do |post| %>
-		<tr>
-			<td><%= post.id -%></td>
-			<td><%= post.title -%></td>
-			<td><%=l post.created_at, format: :basic -%></td>
-			<td><%=l post.updated_at, format: :basic -%></td>
-			<td><%=s post.status -%></td>
-			<td>
-				<%= link_to 'Exibir', post_path(post.id), class: 'btn btn-default btn-xs' %>
-				<%= link_to 'Excluir', post_path(post.id), method: :delete, data: {confirm: 'Deseja mesmo excluir este post?'}, class: 'btn btn-danger btn-xs' %>
-				<%= link_to "Editar", edit_post_path(post.id), class: 'btn btn-info btn-xs' %>
-			</td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+                <p><i class="fa fa-clock-o"></i> Postado em <%=l post.published_at, format: :basic -%></p>
+                <hr>
+
+                <img class="img-responsive" src="http://lorempixel.com/900/300/technics/Apply/" alt=""> 
+                <hr>
+                <%= content_tag :p, post.resume -%>
+                
+                <%= link_to post_path(post), class: "btn btn-primary" do %>
+					Detalhes <i class="fa fa-chevron-right"></i>                
+                <% end %>
+
+                <hr>
+            <% end %>
+
+			<%= paginate @posts -%>
+
+                <!-- Paginação-->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Anterior</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Próximo &rarr;</a>
+                    </li>
+                </ul>
+
+

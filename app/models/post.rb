@@ -1,12 +1,13 @@
 class Post < ActiveRecord::Base
-	# Relationships
+	# RELATIONSHIPS
 	has_many :comments
+	belongs_to :category
 
-	# Scopes
+	# SCOPES
 	scope :active, -> { where(status: true) }
 	scope :inactive, -> { where(status: false) }
 
-	# Validations
+	# VALIDATIONS
 	validates :title, :resume, :content, presence: true
 	validates :title, length: { minimum: 10 }
 end

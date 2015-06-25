@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # GET
   def index
-  	@posts = Post.all
+  	@posts = Post.order('id ASC').page(params[:page]).per(10)
   end
 
   # GET
@@ -68,6 +68,7 @@ class PostsController < ApplicationController
     # since you'll be able to reuse the same permit list between create and update. Also, you
     # can specialize this method with per-user checking of permissible attributes.
     def post_params
-      params.require(:post).permit(:title, :resume, :published_at, :status, :content)
+      # params.require(:post).permit!
+      params.require(:post).permit(:category_id, :title, :resume, :published_at, :status, :content)
     end  
 end

@@ -1,0 +1,12 @@
+<%= simple_form_for @page, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :title %>
+  <%= error_span(@page[:title]) %>
+  <%= f.input :content %>
+  <%= error_span(@page[:content]) %>
+  <%= f.input :slug %>
+  <%= error_span(@page[:slug]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                pages_path, :class => 'btn btn-default' %>
+<% end %>

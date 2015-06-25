@@ -4,3 +4,11 @@
 <h3><%= @post.resume -%></h3>
 
 <%= @post.content.html_safe -%>
+
+<% content_for :author do -%>
+    <div class="well">
+        <h3>Autor</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos blanditiis molestias dolorem nobis recusandae, voluptatum, tempora deserunt accusantium tenetur accusamus minus facere optio fugiat ipsum, earum eius. Omnis, temporibus facilis.</p>
+    </div>
+    <hr>
+<% end -%>

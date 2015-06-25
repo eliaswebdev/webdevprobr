@@ -13,6 +13,8 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
@@ -21,21 +23,41 @@
   </head>
   <body>
 
-    <%= render 'layouts/menu' -%>
+    <%= render 'layouts/header_site' -%>
 
+
+    <!-- Page Content -->
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <%= bootstrap_flash %>
-          <%= yield %>
+
+        <div class="row">
+            <div class="col-md-8">
+                <%= bootstrap_flash %>
+                <%= yield %>
+            </div>
+
+            <%= render 'layouts/sidebar_site' %>
+
         </div>
-      </div><!--/row-->
+        <!-- /.row -->
 
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
+        <hr>
 
-    </div> <!-- /container -->
-  <%= javascript_include_tag "application" %>
-  </body>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; Curso Ruby on Rails 2015</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <%= javascript_include_tag "application" %>
+
+</body>
+
 </html>
