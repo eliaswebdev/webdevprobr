@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
   # GET
   def index
-  	@posts = Post.order('id ASC').page(params[:page]).per(10)
+    if params[:category].present?
+      @posts = Post.where(category: params[:category]).order('id ASC').page(params[:page]).per(10)
+  	else
+      @posts = Post.order('id ASC').page(params[:page]).per(10)
+    end
   end
 
   # GET

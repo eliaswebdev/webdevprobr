@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
 require 'ffaker'
 
 puts 'Categories'
@@ -18,7 +20,7 @@ end
 puts 'Posts'
 100.times do
 	Post.create(
-		category_id: Category.all.order('RANDOM()').first.id,
+		category_id: Category.all.order('RAND()').first.id,
 		title: FFaker::Lorem.sentence,
 		resume: FFaker::Lorem.phrase,
 		content: FFaker::Lorem.paragraphs,
@@ -26,3 +28,14 @@ puts 'Posts'
 		status: true
 	)
 end
+
+
+
+# Roles
+puts '# Roles'
+regra_admin = Role.create!(name: "admin", description: "Administrator", value: "Administrator")
+regra_editor = Role.create!(name: "editor", description: "Editor", value: "Editor")
+regra_client = Role.create!(name: "client", description: "Client", value: "Client")
+
+
+

@@ -3,4 +3,7 @@
 - gem 'kaminari' => paginação
 - namespace
 - gem 'devise' => autenticação
+- gem 'railroady', '1.1.0'
+============================================================
+- gem 'ckeditor'
 - gem 'declarative_authorization' => controle de acesso

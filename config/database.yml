@@ -1,13 +1,14 @@
 
 default: &default
-  # adapter: mysql2
-  adapter: postgresql
+  adapter: mysql2
+  # adapter: postgresql
   encoding: utf8
   pool: 5
-  username: postgres
+  # username: postgres
+  username: root
   password: root
   host: 127.0.0.1
-  port: 5432
+  # port: 5432
   ##socket: /opt/lampp/var/mysql/mysql.sock
 
 development:

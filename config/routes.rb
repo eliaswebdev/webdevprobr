@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/busca' => 'pages#busca'
+
   devise_for :users
 
   resources :contacts
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
     resources :contacts
     resources :posts
     resources :pages    
+    resources :users    
   end
 
   root 'pages#welcome'

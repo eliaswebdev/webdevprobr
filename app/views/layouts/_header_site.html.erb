@@ -22,6 +22,16 @@
                     <li><a href="#"><i class="icon fa fa-facebook-official"></i></a></li>
                     <li><a href="#"><i class="icon fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="icon fa fa-github"></i></a></li>
+                <% unless user_signed_in? -%>
+                    <li><a href="/admin"><i class="icon fa fa-lock"></i></a></li>
+                <% else -%>
+                    <li><a href="/admin"><i class="icon fa fa-lock"></i></a></li>
+                    <li>
+                        <%= link_to destroy_user_session_path, :method => Devise.sign_out_via do %>
+                          <i class="icon fa fa-power-off"></i>
+                        <% end %>
+                    </li>
+                <% end -%>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -41,14 +51,14 @@
             </div>
             <div class="col-md-6">  
                 <div class="input-group search-cam hidden-xs">
-                    <form action="http://portalv1.com.br/blogs/camara-municipal-de-valenca" method="GET" class="form-inline form-search-cam">
+                    <%= form_tag '/busca', {:class => "form-inline form-search-cam", method: 'get'} do %>
                         <div class="form-group">
                             <input type="text" name="s" class="form-control placeholder" placeholder="Perquisar">
                         </div>  
                         <span class="input-group bnt-cam-search">
                             <button class="btn btn-default" type="submit"><i class="fa fa-search cam-icon-search"></i></button>
                         </span>
-                    </form> 
+                    <% end %>
                 </div><!-- /input-group -->
             </div>
         </div>

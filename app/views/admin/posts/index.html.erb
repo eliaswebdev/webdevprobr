@@ -1,5 +1,6 @@
 <%- model_class = Post -%>
 <div class="page-header">
+  <%= link_to t('.new', :default => t("helpers.links.new")), new_admin_post_path, :class => 'btn btn-primary pull-right' %>
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
@@ -19,7 +20,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to post.id, post_path(post) %></td>
+        <td><%= link_to post.id, admin_post_path(post) %></td>
         <td><%= post.title %></td>
         <td><%= post.resume %></td>
         <td><%= post.content %></td>
@@ -29,9 +30,9 @@
         <td><%=l post.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_post_path(post), :class => 'btn btn-default btn-xs' %>
+                      edit_admin_post_path(post), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      post_path(post),
+                      admin_post_path(post),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -41,6 +42,3 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_post_path,
-            :class => 'btn btn-primary' %>
