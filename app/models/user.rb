@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  	# RELATIONSHIPS
+  # RELATIONSHIPS
 	has_many :permissions
 	has_many :roles, :through => :permissions
 
-  	# DECLARATIVE AUTHORIZATION
+  # DECLARATIVE AUTHORIZATION
 	def role_symbols
 		(roles || []).map{|r| r.name.underscore.to_sym}
 	end	

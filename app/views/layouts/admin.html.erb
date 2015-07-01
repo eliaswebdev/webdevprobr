@@ -32,11 +32,11 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
               <%= content_tag :li, link_to('Site', root_path) -%>
-              <%= content_tag :li, link_to('Categories', admin_categories_path) -%>
-              <%= content_tag :li, link_to('Contacts', admin_contacts_path) -%>
-              <%= content_tag :li, link_to('Posts', admin_posts_path) -%>
-              <%= content_tag :li, link_to('Pages', admin_pages_path) -%> 
-              <%= content_tag :li, link_to('Users', admin_users_path) -%> 
+              <%= content_tag :li, link_to('Categories', admin_categories_path) if permitted_to? :manage, :admin_categories -%>
+              <%= content_tag :li, link_to('Contacts', admin_contacts_path) if permitted_to? :manage, :admin_contacts -%>
+              <%= content_tag :li, link_to('Posts', admin_posts_path) if permitted_to? :manage, :admin_posts -%>
+              <%= content_tag :li, link_to('Pages', admin_pages_path) if permitted_to? :manage, :admin_pages -%> 
+              <%= content_tag :li, link_to('Users', admin_users_path) if permitted_to? :manage, :admin_users -%> 
           </ul>
           <% if user_signed_in? -%>
           <ul class="nav navbar-nav pull-right">

@@ -18,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'ffaker'
 gem 'kaminari'
+gem 'ckeditor'
 
 gem 'devise'
 gem 'declarative_authorization'

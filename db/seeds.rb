@@ -20,7 +20,7 @@ end
 puts 'Posts'
 100.times do
 	Post.create(
-		category_id: Category.all.order('RAND()').first.id,
+		category_id: Category.all.order('RANDOM()').first.id,
 		title: FFaker::Lorem.sentence,
 		resume: FFaker::Lorem.phrase,
 		content: FFaker::Lorem.paragraphs,
@@ -33,9 +33,23 @@ end
 
 # Roles
 puts '# Roles'
-regra_admin = Role.create!(name: "admin", description: "Administrator", value: "Administrator")
-regra_editor = Role.create!(name: "editor", description: "Editor", value: "Editor")
-regra_client = Role.create!(name: "client", description: "Client", value: "Client")
+role_admin = Role.create!(name: "admin", description: "Administrator", value: "Administrator")
+role_editor = Role.create!(name: "editor", description: "Editor", value: "Editor")
+role_client = Role.create!(name: "client", description: "Client", value: "Client")
+
+# Users
+puts '# User'
+admin_user = User.create(email: 'admin@webdev.pro.br', password: '12345678')
+editor_user = User.create(email: 'editor@webdev.pro.br', password: '12345678')
+
+puts '# Add user permitions'
+admin_user.roles << role_admin
+editor_user.roles << role_editor
+
+
+
+
+
 
 
 

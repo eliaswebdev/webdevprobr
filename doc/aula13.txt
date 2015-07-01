@@ -1,9 +1,14 @@
 - gem 'twitter-bootstrap'
 - gem 'ffaker' => seed
 - gem 'kaminari' => paginação
+- gem 'railroady', '1.1.0'
 - namespace
 - gem 'devise' => autenticação
-- gem 'railroady', '1.1.0'
-============================================================
-- gem 'ckeditor'
 - gem 'declarative_authorization' => controle de acesso
+============================================================
+- gem 'carrierwave '
+- gem 'mini_magick'
+- gem 'ckeditor' => editor de texto
+- gem 'carrierwave' => upload
+- gem 'ransak' => busca
+- comentários
