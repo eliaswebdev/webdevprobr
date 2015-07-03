@@ -10,4 +10,7 @@ class Post < ActiveRecord::Base
 	# VALIDATIONS
 	validates :title, :resume, :content, presence: true
 	validates :title, length: { minimum: 10 }
+
+	# UPLOADERS
+	mount_uploader :image, ImageUploader
 end

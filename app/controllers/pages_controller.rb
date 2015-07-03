@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:show]
 
   def welcome
-    @posts = Post.order('published_at DESC').page(params[:page]).per(5)
+    @posts = Post.order('id DESC').page(params[:page]).per(5)
   end
 
   def show

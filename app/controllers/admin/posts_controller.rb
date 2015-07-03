@@ -4,7 +4,7 @@ class Admin::PostsController < AdminController
   # GET /admin/posts
   # GET /admin/posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC').page(params[:page]).per(10)
   end
 
   # GET /admin/posts/1

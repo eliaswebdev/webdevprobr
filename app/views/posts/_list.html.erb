@@ -9,7 +9,8 @@
                 <p><i class="fa fa-clock-o"></i> Postado em <%=l post.published_at, format: :basic -%></p>
                 <hr>
 
-                <img class="img-responsive" src="http://lorempixel.com/900/300/technics/Apply/" alt=""> 
+                <!-- <img class="img-responsive" src="http://lorempixel.com/900/300/technics/Apply/" alt=""> -->
+                <%= image_tag post.image.large.url, class: "img-responsive", alt: post.title  if post.image.present? -%>
                 <hr>
                 <%= content_tag :p, post.resume -%>
                 

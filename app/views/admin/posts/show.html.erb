@@ -4,18 +4,24 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
+  <dd><%= @post.category.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @post.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:resume) %>:</strong></dt>
   <dd><%= @post.resume %></dd>
   <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
-  <dd><%= @post.content %></dd>
+  <dd><%= @post.content.html_safe %></dd>
   <dt><strong><%= model_class.human_attribute_name(:published_at) %>:</strong></dt>
-  <dd><%= @post.published_at %></dd>
+  <dd><%=l @post.published_at, format: :short %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @post.status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @post.category_id %></dd>
+  <dd><%=s @post.status %></dd>
+  <% if @post.image? -%>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd>
+    <%= image_tag @post.image_url(:thumb), alt: @post.title, title: @post.title %>
+  </dd>
+  <% end -%>
 </dl>
 
 

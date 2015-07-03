@@ -2,9 +2,9 @@ class PostsController < ApplicationController
   # GET
   def index
     if params[:category].present?
-      @posts = Post.where(category: params[:category]).order('id ASC').page(params[:page]).per(10)
+      @posts = Post.where(category: params[:category]).order('id DESC').page(params[:page]).per(10)
   	else
-      @posts = Post.order('id ASC').page(params[:page]).per(10)
+      @posts = Post.order('id DESC').page(params[:page]).per(10)
     end
   end
 

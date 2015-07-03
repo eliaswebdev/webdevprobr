@@ -5,10 +5,10 @@
 - namespace
 - gem 'devise' => autenticação
 - gem 'declarative_authorization' => controle de acesso
-============================================================
-- gem 'carrierwave '
-- gem 'mini_magick'
-- gem 'ckeditor' => editor de texto
 - gem 'carrierwave' => upload
-- gem 'ransak' => busca
+- gem 'mini_magick'
+- gem 'rmagick'
+- gem 'ckeditor' => editor de texto
+============================================================
 - comentários
+- gem 'ransak' => busca
