@@ -67,6 +67,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def comentar
+    @parametros_do_formulario = params
+    
+    @post = Post.find(params[:comment][:post_id])
+    params[:comment][:ip] = request.remote_ip
+
+    Comment.create(comment_params)
+    
+    redirect_to(@post, :notice => 'O comentário foi enviado com sucesso!')
+
+    # @post.comments.create(
+    #   name: params[:name],
+    #   email: params[:email],
+    #   content: params[:content]
+    # )
+  end
+
   private
     # Using a private method to encapsulate the permissible parameters is just a good pattern
     # since you'll be able to reuse the same permit list between create and update. Also, you
@@ -74,5 +91,14 @@ class PostsController < ApplicationController
     def post_params
       # params.require(:post).permit!
       params.require(:post).permit(:category_id, :title, :resume, :published_at, :status, :content)
-    end  
+    end
+
+    def comment_params
+      params.require(:comment).permit(:post_id, :name, :email, :content, :ip)      
+    end
 end
+
+
+
+
+

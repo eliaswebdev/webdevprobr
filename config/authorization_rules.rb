@@ -1,6 +1,7 @@
 authorization do
     role :admin do
         # ROLES
+        has_permission_on [:admin_comments], :to => [:manage]
         has_permission_on [:admin_pages], :to => [:manage, :welcome]
         has_permission_on [:admin_users], :to => [:manage]
         has_permission_on [:admin_categories], :to => [:manage]

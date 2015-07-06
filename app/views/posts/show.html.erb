@@ -5,6 +5,37 @@
 
 <%= @post.content.html_safe -%>
 
+<hr>
+
+<h3>Comentários <% @post.comments.active.size -%></h3>
+<ul>
+	<% @post.comments.active.each do |comment| %>
+	<li>
+		<strong>Nome: </strong> <%= comment.name -%> <br>
+		<strong>E-mail: </strong> <%= comment.email -%> <br>
+		<strong>Mensagem: </strong> <%= comment.content -%> <br>
+		<strong>Enviado em:</strong> <%=l comment.created_at -%> <br>
+		<strong>IP:</strong> <%= comment.ip -%>
+		<hr>
+	</li>
+	<% end %>
+</ul>
+
+<h3>Faça seu comentário</h3>
+
+<%= simple_form_for @post.comments.new, url: '/comentar' do |f| %>
+
+	<%= f.input :post_id, as: :hidden, input_html: {value: @post.id} %>
+	<%= f.input :name %>
+	<%= f.input :email %>
+	<%= f.input :content %>
+
+
+	<%= f.submit 'Enviar mensagem' %>
+
+<% end %>
+
+
 <% content_for :author do -%>
     <div class="well">
         <h3>Autor</h3>

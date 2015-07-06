@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get '/busca' => 'pages#busca'
+  post '/comentar' => 'posts#comentar'
+
 
   devise_for :users
 
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'pages#welcome'
+    resources :comments
     resources :categories
     resources :contacts
     resources :posts
