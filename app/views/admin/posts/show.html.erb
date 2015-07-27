@@ -16,6 +16,8 @@
   <dd><%=l @post.published_at, format: :short %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
   <dd><%=s @post.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:slug) %>:</strong></dt>
+  <dd><%= @post.slug %></dd>
   <% if @post.image? -%>
   <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
   <dd>

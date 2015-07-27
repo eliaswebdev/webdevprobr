@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.3'
 gem 'mysql2'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
@@ -23,6 +23,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'rmagick'
 gem 'ckeditor'
+gem 'friendly_id', '~> 5.1.0'
 
 gem 'devise'
 gem 'declarative_authorization'
